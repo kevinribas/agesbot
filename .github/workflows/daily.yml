@@ -2,8 +2,8 @@ name: Enviar Mensagem no Discord
 
 on:
   schedule:
-    - cron: "0 22 * * *" # 22:00 UTC = 19:00 Brasil (horário de Brasília)
-  workflow_dispatch: # Permite execução manual
+    - cron: "0 22 * * 1,3,4,5,6"
+  workflow_dispatch:
 
 jobs:
   send_message:
