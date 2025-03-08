@@ -1,0 +1,17 @@
+name: Enviar Mensagem no Discord
+
+on:
+  schedule:
+    - cron: "0 22 * * *" # 22:00 UTC = 19:00 Brasil (horário de Brasília)
+  workflow_dispatch: # Permite execução manual
+
+jobs:
+  send_message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar mensagem para o Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{"content": "**🕒 Hora da Daily!**\n\n🚀 Não se esqueçam de fazer a daily de hoje!\n\n**📝 Exemplo:**\n📌 *O que fiz ontem:* ...\n🎯 *O que farei hoje:* ...\n⚠️ *Impedimentos:* ..."}' \
+               ${{ secrets.DISCORD_WEBHOOK }}
