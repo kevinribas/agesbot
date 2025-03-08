@@ -13,5 +13,5 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d '{"content": "**🕒 DAILY! Não se esqueçam de fazer a daily de hoje! 🚀**\n\n**📝 Exemplo:**\n📌 *O que fiz ontem:* ...\n🎯 *O que farei hoje:* ...\n⚠️ *Impedimentos:* ..."}' \
+               -d '{"content": "**🚀 HORA DA DAILY!**\n\n**📝 Exemplo:**\n📌 *O que fiz ontem:* ...\n🎯 *O que farei hoje:* ...\n⚠️ *Impedimentos:* ..."}' \
                ${{ secrets.DISCORD_WEBHOOK }}
